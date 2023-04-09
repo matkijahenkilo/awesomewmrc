@@ -1,6 +1,7 @@
 local awful = require("awful")
 
-awful.spawn("xautolock -exit")
+--to reboot processes
+--os.execute("xautolock -exit") -- necessary evil, doesn't work
 awful.spawn("killall picom")
 awful.spawn("killall nm-applet")
 
