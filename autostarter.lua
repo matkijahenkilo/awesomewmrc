@@ -18,4 +18,9 @@ awful.spawn("picom --vsync")
 
 --discord bot w
 local handle = io.popen("pgrep luvit")
-if not handle then awful.spawn("kitty /home/nanako/discordiabot.sh") end
+if handle then
+    local pid = handle:read("*a")
+    if not pid or pid == '' then
+        awful.spawn("kitty /home/nanako/discordiabot.sh")
+    end
+end
