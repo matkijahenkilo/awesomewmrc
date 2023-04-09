@@ -1,7 +1,6 @@
 local awful = require("awful")
 
 awful.spawn("xautolock -exit")
-awful.spawn("xautolock -exit")
 awful.spawn("killall picom")
 awful.spawn("killall nm-applet")
 

@@ -12,8 +12,6 @@ require("awful.hotkeys_popup.keys")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
--- Create a textclock widget
-mytextclock = wibox.widget.textclock("%a %d/%m/%y, at %X nanora!", 1)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -131,7 +129,7 @@ awful.screen.connect_for_each_screen(function(s)
             volume_widget { widget_type = 'icon_and_text' },
             separator,
             --mykeyboardlayout,
-            mytextclock,
+            wibox.widget.textclock("%a %d/%m/%y, at %X nanora!", 1),
             separator,
             s.mylayoutbox,
         },
