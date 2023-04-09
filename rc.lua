@@ -22,11 +22,9 @@ require("signals")
 
 -- Run garbage collector regularly to prevent memory leaks
 gears.timer {
-         timeout = 300,
-         autostart = true,
-         callback = function() collectgarbage() end
+    timeout = 300,
+    autostart = true,
+    callback = function() collectgarbage() end
 }
 
--- auto starter
 require("autostarter")
-

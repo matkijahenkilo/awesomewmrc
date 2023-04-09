@@ -1,16 +1,27 @@
 local awful = require("awful")
 
+local processesToKill = {
+  "luvit",
+  "discordiabot",
+}
+
+local function killProcesses()
+  for _, process in ipairs(processesToKill) do
+    local handle = io.popen("pgrep " .. process)
+    if handle then
+      local pid = handle:read("*a")
+      handle:close()
+      awful.spawn("kill " .. pid)
+    end
+  end
+end
+
 --stop stuff
 do
+  killProcesses()
   awful.spawn("xautolock -exit")
-  local handle = io.popen("pgrep discordiabot")
-  if handle then
-    local pid = handle:read("*a")
-    handle:close()
-    awful.spawn("kill " .. pid)
-  end
+  awful.spawn("xautolock -exit")
   awful.spawn("killall picom")
-  awful.spawn("xautolock -exit")
   awful.spawn("killall nm-applet")
 end
 
