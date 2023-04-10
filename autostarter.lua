@@ -12,8 +12,10 @@ awful.spawn("nm-applet")
 awful.spawn("fcitx5")
 
 --screen locker
-awful.spawn("xscreensaver --no-splash")
-awful.spawn("xautolock -corners +00- -time 5 -locker 'xscreensaver-command -lock'")
+--everything related to X seems to suck
+--awful.spawn("xscreensaver --no-splash")
+--awful.spawn("xautolock -corners +00- -time 5 -locker 'xscreensaver-command -lock'")
+awful.spawn("xautolock -corners +00- -time 5 -locker slock")
 
 --compositor
 awful.spawn("picom --vsync")
