@@ -57,7 +57,13 @@ awful.rules.rules = {
       properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    -- Set Firefox to always map on the tag named "1" on screen 1.
+    { rule = { class = "Firefox" },
+      properties = { screen = 1, tag = "1" } },
+    { rule = { class = "Discord" },
+      properties = { tag = "2" } },
+    { rule = { class = "AnyDesk" },
+      properties = { tag = "8" } },
+    { rule = { name = "discordiabot.sh" },
+      properties = { tag = "9" } },
 }
