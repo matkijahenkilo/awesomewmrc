@@ -39,6 +39,7 @@ myawesomemenu = {
       table.insert(t, tonumber(str))
       --naughty.notify({text=str})
     end
+    if not t[1] then return end
     menubar.geometry.x = t[1]/4
     menubar.geometry.y = t[2]/4
     menubar.geometry.width = t[1]/2
