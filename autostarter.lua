@@ -21,10 +21,13 @@ awful.spawn("xautolock -corners +00- -time 5 -locker slock")
 awful.spawn("picom --vsync")
 
 --discord bot w
-local handle = io.popen("pgrep luvit")
-if handle then
-    local pid = handle:read("*a")
+do
+  local handler = io.popen("pgrep luvit")
+  if handler then
+    local pid = handler:read("*a")
+    handler:close()
     if not pid or pid == '' then
-        awful.spawn("kitty /home/nanako/discordiabot.sh")
+      awful.spawn("kitty /home/nanako/discordiabot.sh")
     end
+  end
 end
