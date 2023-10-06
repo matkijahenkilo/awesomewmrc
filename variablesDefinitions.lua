@@ -9,7 +9,7 @@ local beautiful = require("beautiful")
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.init("~/.config/awesome/themes/default/theme.lua")
 for s = 1, screen.count() do
-  gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+  gears.wallpaper.maximized(beautiful.wallpaper, s, false)
 end
 
 -- This is used later as the default terminal and editor to run.
