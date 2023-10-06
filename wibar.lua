@@ -12,6 +12,7 @@ require("awful.hotkeys_popup.keys")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -122,7 +123,9 @@ awful.screen.connect_for_each_screen(function(s)
             separator,
             wibox.widget.systray(),
             separator,
-		        cpu_widget(),
+            cpu_widget(),
+            separator,
+            battery_widget(),
             separator,
             fs_widget(),
             separator,
