@@ -7,7 +7,7 @@ local beautiful = require("beautiful")
 
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.init("/home/nanako/.config/awesome/themes/default/theme.lua")
+beautiful.init("~/.config/awesome/themes/default/theme.lua")
 for s = 1, screen.count() do
   gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 end
